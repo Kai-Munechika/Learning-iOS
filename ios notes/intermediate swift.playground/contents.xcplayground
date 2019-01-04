@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='initializers'/>
+        <page name='computed and lazy properties and property observers '/>
+        <page name='value semantics'/>
+        <page name='mixed semantics'/>
+        <page name='extensions'/>
+    </pages>
+</playground>
