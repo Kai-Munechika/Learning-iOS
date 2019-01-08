@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StopWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjb-N3-rNV">
+                                <rect key="frame" x="175.5" y="65" width="24" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xoi-2x-OfP">
+                                <rect key="frame" x="170.5" y="118" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startTimer" destination="BYZ-38-t0r" eventType="touchUpInside" id="1KS-rt-lgp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x27-Y6-guE">
+                                <rect key="frame" x="168" y="203" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetTimer" destination="BYZ-38-t0r" eventType="touchUpInside" id="9rZ-58-e62"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9n4-SU-fvA">
+                                <rect key="frame" x="166.5" y="156" width="42" height="30"/>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="pauseTimer" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mla-x5-DM8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xjb-N3-rNV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5l9-7h-pr4"/>
+                            <constraint firstItem="9n4-SU-fvA" firstAttribute="top" secondItem="Xoi-2x-OfP" secondAttribute="bottom" constant="8" id="ARx-QI-hX5"/>
+                            <constraint firstItem="x27-Y6-guE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QDn-DU-Q3y"/>
+                            <constraint firstItem="Xoi-2x-OfP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ut7-aQ-OC3"/>
+                            <constraint firstItem="9n4-SU-fvA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zn2-fc-kJ6"/>
+                            <constraint firstItem="x27-Y6-guE" firstAttribute="top" secondItem="9n4-SU-fvA" secondAttribute="bottom" constant="17" id="kY7-AO-qx8"/>
+                            <constraint firstItem="Xoi-2x-OfP" firstAttribute="top" secondItem="xjb-N3-rNV" secondAttribute="bottom" constant="32" id="o7v-z0-wik"/>
+                            <constraint firstItem="xjb-N3-rNV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="soY-fw-eF2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="pauseButton" destination="9n4-SU-fvA" id="70L-xF-maZ"/>
+                        <outlet property="resetButton" destination="x27-Y6-guE" id="Zof-Zh-wFC"/>
+                        <outlet property="startButton" destination="Xoi-2x-OfP" id="PJq-vv-qjQ"/>
+                        <outlet property="timeLabel" destination="xjb-N3-rNV" id="ZZH-X7-tSS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
