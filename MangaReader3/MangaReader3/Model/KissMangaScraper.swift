@@ -23,8 +23,7 @@ class KissMangaScraper {
         let url = "https://kissmanga.com/Manga/Hunter-Age/Ch-167---Constant-Changes?id=474157"
         let callback = KissMangaScraper.printChapterData
         
-        // KissMangaScraper.parseWebPage(url: url, callback: callback)
-        print(KissMangaScraper.isPreScreen(html: MockData.kissMangaPreScreenHtml)) 
+        KissMangaScraper.parseWebPage(url: url, callback: callback)
     }
     
     static func isPreScreen(html: String) -> Bool {
@@ -42,7 +41,6 @@ class KissMangaScraper {
         return false
     }
     
-    
     static func parseWebPage(url: String, callback: @escaping (String) -> Void) {
         Erik.visit(url: URL(string: url)!) { object, error in
             if let e = error {
@@ -52,11 +50,15 @@ class KissMangaScraper {
                 guard let html = doc.body?.toHTML else { return }
                 
                 print(html)
-                callback(html)
+                
+                if !isPreScreen(html: html) {
+                    callback(html)
+                } else {
+                    // Todo
+                }
             }
         }
     }
-    
     
     static func printChapterData(html: String) {
         do {
