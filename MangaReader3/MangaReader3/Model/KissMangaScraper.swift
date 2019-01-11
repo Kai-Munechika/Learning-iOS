@@ -54,7 +54,7 @@ class KissMangaScraper {
                 if !isPreScreen(html: html) {
                     callback(html)
                 } else {
-                    // Todo
+                    // Todo: handle prescreen case
                 }
             }
         }
