@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     weak var scrollView: UIScrollView!
     
+    //TODO: USE LAZY LOADING
     override func loadView() {
         super.loadView()
         
