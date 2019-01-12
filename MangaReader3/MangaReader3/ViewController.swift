@@ -9,18 +9,31 @@
 import UIKit
 import Kingfisher
 
-class ViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
+class ViewController: UIViewController {
+    
+    weak var imageView: UIView!
+    
+    override func loadView() {
+        super.loadView()
+        
+        let imageView = ScaledHeightImageView(frame: .zero)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            ])
+        
+        let url = URL(string: MockData.mockChapter.imageUrls[7]) 
+        imageView.kf.setImage(with: url)
+        self.imageView = imageView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: MockData.mockChapter.imageUrls[9])
-        imageView.kf.setImage(with: url)
-        
-
-        //KissMangaScraper.scrape()
+        self.imageView.contentMode = .scaleAspectFit
     }
 }
 
