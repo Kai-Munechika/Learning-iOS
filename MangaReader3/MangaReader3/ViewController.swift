@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        KissMangaScraper.scrape()
+        let url = URL(string: MockData.mockChapter.imageUrls[9])
+        imageView.kf.setImage(with: url)
+        
+
+        //KissMangaScraper.scrape()
     }
 }
 

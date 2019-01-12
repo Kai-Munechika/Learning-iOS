@@ -6,11 +6,13 @@ PODS:
   - Erik/Core (4.2.0):
     - Kanna
   - Kanna (4.0.3)
+  - Kingfisher (5.0.1)
   - SwiftSoup (1.7.4)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0.beta.1)
   - Erik
+  - Kingfisher (~> 5.0)
   - SwiftSoup
 
 SPEC REPOS:
@@ -18,14 +20,16 @@ SPEC REPOS:
     - Alamofire
     - Erik
     - Kanna
+    - Kingfisher
     - SwiftSoup
 
 SPEC CHECKSUMS:
   Alamofire: 2ef6d6c984c5d21c366e9b41a9ae7dfee2b67a44
   Erik: 6d235ccca881877bec9a28b833dfbb86dca91165
   Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
+  Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
   SwiftSoup: 92f5b348c131aed8af04f4326db1579ab19fa08c
 
-PODFILE CHECKSUM: 8aec927334af5b75e4b72f784ae49853a859e58e
+PODFILE CHECKSUM: b293a0557720ef5cb39c5c34b97a2be2b6b8b602
 
 COCOAPODS: 1.5.3
