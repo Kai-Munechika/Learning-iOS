@@ -1,0 +1,55 @@
+//
+//  MockData.swift
+//  WhitehousePetitions
+//
+//  Created by Kai Munechika on 1/17/19.
+//  Copyright © 2019 Kai Munechika. All rights reserved.
+//
+
+import Foundation
+
+class MockData {
+    
+    static let JSON = """
+{
+    "metadata":{
+        "responseInfo":{
+            "status":200,
+            "developerMessage":"OK",
+        }
+    },
+    "results":[
+        {
+            "title":"Legal immigrants should get freedom before undocumented immigrants – moral, just and fair",
+            "body":"I am petitioning President Trump's Administration to take a humane view of the plight of legal immigrants. Specifically, legal immigrants in Employment Based (EB) category. I believe, such immigrants were short changed in the recently announced reforms via Executive Action (EA), which was otherwise long due and a welcome announcement.",
+            "issues":[
+                {
+                    "id":"28",
+                    "name":"Human Rights"
+                },
+                {
+                    "id":"29",
+                    "name":"Immigration"
+                }
+            ],
+            "signatureThreshold":100000,
+            "signatureCount":267,
+            "signaturesNeeded":99733,
+        },
+        {
+            "title":"National database for police shootings.",
+            "body":"There is no reliable national data on how many people are shot by police officers each year. In signing this petition, I am urging the President to bring an end to this absence of visibility by creating a federally controlled, publicly accessible database of officer-involved shootings.",
+            "issues":[
+                {
+                    "id":"28",
+                    "name":"Human Rights"
+                }
+            ],
+            "signatureThreshold":100000,
+            "signatureCount":17453,
+            "signaturesNeeded":82547,
+        }
+    ]
+}
+"""
+}
