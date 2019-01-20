@@ -17,6 +17,7 @@ struct Manga {
     let status: Status
     let authors: [String]
     let imageUrl: String
+    let chapters: [Chapter]
 }
 
 enum Status: String {

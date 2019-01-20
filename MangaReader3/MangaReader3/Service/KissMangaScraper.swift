@@ -39,7 +39,20 @@ class KissMangaScraper {
                 let description = try descriptionElem.text()
                 let imgUrl = try (doc.select("img").last()?.attr("src"))!
                 
-                let manga = Manga(name: mangaName, otherNames: otherNames, numViews: numViews, genres: genres, description: description, status: status, authors: authors, imageUrl: imgUrl)
+                var chapters = [Chapter]()
+                
+                // each of these rows contain chapter data
+                let chapterTableRows = try doc.select("tr").dropFirst(2)
+                
+                for row in chapterTableRows {
+                    let chapterUrl = try "https://kissmanga.com" + row.select("a").attr("href")
+                    let chapterName = try row.select("a").text()
+                    let date = try row.select("td").last()?.text()
+                    
+                    chapters.append(Chapter(name: chapterName, url: chapterUrl, dateAdded: date!))
+                }
+                
+                let manga = Manga(name: mangaName, otherNames: otherNames, numViews: numViews, genres: genres, description: description, status: status, authors: authors, imageUrl: imgUrl, chapters: chapters)
                 completion(manga)
                 
             } catch {
@@ -48,7 +61,7 @@ class KissMangaScraper {
         }
     }
     
-    static func fetchChapter(url: String, completion: @escaping (Chapter) -> ()) {
+    static func fetchChapterImageUrls(url: String, completion: @escaping ([String]) -> ()) {
         fetchWebpage(url: url) { html in
             do {
                 let doc: SwiftSoup.Document = try SwiftSoup.parse(html)
@@ -61,11 +74,10 @@ class KissMangaScraper {
                 }
                 
                 // Chapter name
-                let headerElem = (try doc.select("select option[selected]")).get(2)
-                let chapterName = String(try headerElem.text())
+                // let headerElem = (try doc.select("select option[selected]")).get(2)
+                // let chapterName = String(try headerElem.text())
                 
-                let chapter = Chapter(name: chapterName, imageUrls: imageUrls)
-                completion(chapter)
+                completion(imageUrls)
                 
             } catch {
                 print(error)
@@ -92,8 +104,10 @@ class KissMangaScraper {
                 }
                 
                 if !isPreScreen(html: html) {
+                    print("prescreen passed; success")
                     completion(html)
                 } else {
+                    print("prescreen hit; try again in a few seconds")
                     // Todo: handle prescreen case
                 }
             }

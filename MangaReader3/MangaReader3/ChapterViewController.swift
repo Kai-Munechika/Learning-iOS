@@ -18,8 +18,8 @@ class ChapterViewController: UITableViewController {
         super.viewDidLoad()
         tableView.allowsSelection = false;
         
-        KissMangaScraper.fetchChapter(url: MockData.mockChapterUrl) { [weak self] chapter in
-            self?.imageUrls = chapter.imageUrls
+        KissMangaScraper.fetchChapterImageUrls(url: MockData.mockChapterUrl) { [weak self] imageUrls in
+            self?.imageUrls = imageUrls
             self?.tableView.reloadData()
         }
     }

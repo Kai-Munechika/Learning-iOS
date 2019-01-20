@@ -10,28 +10,8 @@ import Foundation
 
 class MockData {
     
-    static let mockMangaUrl = "https://kissmanga.com/Manga/Tate-no-Yuusha-no-Nariagari"
+    static let mockMangaUrl = "https://kissmanga.com/Manga/To-You-The-Immortal"
     static let mockChapterUrl = "https://kissmanga.com/Manga/Tate-no-Yuusha-no-Nariagari/Vol-001-Ch-008-Read-Online?id=207420"
-    
-    static let mockChapter = Chapter(name: "Constant Changes", imageUrls: [
-        "https://2.bp.blogspot.com/-wW246HYFsNs/XDZxdmlHbjI/AAAAAAACOGc/Er8a4PXlNpMZXtzDQJH-jfIZSdK0w6WkwCHMYCw/s0/000.png", 
-        "https://2.bp.blogspot.com/-yB6u6RXa5fI/XDZxd8OS9FI/AAAAAAACOGg/RtcCx7xS5bksMqBPc4aMp_UatuJQSEAEACHMYCw/s0/001.png", 
-        "https://2.bp.blogspot.com/-nnEQSiisxgk/XDZxeD7zi6I/AAAAAAACOGk/3QLf5_wXk4U0akXkAE1XVk8xyGZgRbjHwCHMYCw/s0/002.png", 
-        "https://2.bp.blogspot.com/-lt6p6DIHvcc/XDZxel6S-2I/AAAAAAACOGo/0qZXuXlQTLUI8jjxe5aZ3x8Z5uecNy4twCHMYCw/s0/003.png", 
-        "https://2.bp.blogspot.com/-1Uy84D69yYM/XDZxe3DpKPI/AAAAAAACOGs/9QLLR34anFgxKjpRJiBDoGF7TCluayoNACHMYCw/s0/004.png", 
-        "https://2.bp.blogspot.com/-4VMLEP-4tpk/XDZxfKvQHbI/AAAAAAACOGw/OY8ajoRu1NAA907k04POfywb90uGq4jvQCHMYCw/s0/005.png", 
-        "https://2.bp.blogspot.com/-ocO6y4wB1aI/XDZxflW85QI/AAAAAAACOG0/ax9WbRn5xvYWtCQi0KdrKnGFU8zBnSEFQCHMYCw/s0/006.png", 
-        "https://2.bp.blogspot.com/-s5dVPgATTZQ/XDZxf3rjIiI/AAAAAAACOG4/u4vM6anMKsMqqXqpV8eXngMpRGbjehbQQCHMYCw/s0/007.png", 
-        "https://2.bp.blogspot.com/-meaWONBP__E/XDZxgN0o6iI/AAAAAAACOG8/b5_t0C9aLaMYa5xlGIPH9fDAE4-tvJiVACHMYCw/s0/008.png", 
-        "https://2.bp.blogspot.com/-PZvpXM1361U/XDZxgjY3JUI/AAAAAAACOHA/YDuT9JUb2NQEHPIVoHC9vbo5vn87mWPHACHMYCw/s0/009.png", 
-        "https://2.bp.blogspot.com/-_u74krG4UrE/XDZxg0CtF4I/AAAAAAACOHE/BqoA-709WiA0_LmNLWt_KZP_nJhgIc9fgCHMYCw/s0/010.png", 
-        "https://2.bp.blogspot.com/-pp3DJO3gcZM/XDZxhOeZcnI/AAAAAAACOHI/UoFteD0i394C9Gsn3mehJEad3D9Ko9RugCHMYCw/s0/011.png", 
-        "https://2.bp.blogspot.com/-2V2RXN6bVHM/XDZxhWD4GqI/AAAAAAACOHM/dEx2Ac-uAs8EOTGgtpZ6TB4sEyAE8Z13gCHMYCw/s0/012.png", 
-        "https://2.bp.blogspot.com/-sLskU1xFk_g/XDZxh6EhdQI/AAAAAAACOHQ/hVVcOlM4ujoWnY_rGJtM_K0hOIsPfHbqgCHMYCw/s0/013.png", 
-        "https://2.bp.blogspot.com/-vcIVqV5UppY/XDZxiJ9UqiI/AAAAAAACOHU/CTNZd_THAOYAMwONlv5lFkzh1vYj_oAWwCHMYCw/s0/014.png",
-        "https://2.bp.blogspot.com/-EcluTxivkcg/XDZxiT6i3EI/AAAAAAACOHY/9PO7YVBomGEflyQBFmdJBVxMcOn9cvvUQCHMYCw/s0/015.png",
-        "https://2.bp.blogspot.com/-nanVu7aAUk8/XDZxi6HQy2I/AAAAAAACOHc/f8AGbTZ1UKo7mslPg2S1dOfJz2DI-K8WgCHMYCw/s0/016.png"
-        ])
     
     static let kissMangaPreScreenHtml = """
 <body>

@@ -10,5 +10,6 @@ import Foundation
 
 struct Chapter {
     let name: String
-    let imageUrls: [String]
+    let url: String
+    let dateAdded: String
 }
