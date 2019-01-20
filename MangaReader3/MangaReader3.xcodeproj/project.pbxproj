@@ -57,6 +57,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2C0A243F21F4225A000601A1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2CE4337521E6A44800217C58 /* KissMangaScraper.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		2CBFB22721E69D5D00692FDE = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +86,7 @@
 		2CBFB23221E69D5D00692FDE /* MangaReader3 */ = {
 			isa = PBXGroup;
 			children = (
+				2C0A243F21F4225A000601A1 /* Service */,
 				2CCEC32E21E9F32700413267 /* View */,
 				2CE4337421E6A3AC00217C58 /* Model */,
 				2CBFB23321E69D5D00692FDE /* AppDelegate.swift */,
@@ -102,7 +111,6 @@
 		2CE4337421E6A3AC00217C58 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2CE4337521E6A44800217C58 /* KissMangaScraper.swift */,
 				2CCEC32C21E8319800413267 /* MockData.swift */,
 			);
 			path = Model;
