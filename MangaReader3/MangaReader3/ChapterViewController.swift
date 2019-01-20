@@ -9,16 +9,19 @@
 import UIKit
 import Kingfisher
 
-
+// todo: update expected cell height to be moving average of imageView cells' heights loaded so far
 class ChapterViewController: UITableViewController {
         
-    let imageUrls: [String] = MockData.mockChapter.imageUrls    
+    var imageUrls = [String]()    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = false;
         
-        KissMangaScraper.scrape()
+        KissMangaScraper.fetchChapter(url: MockData.mockChapterUrl) { [weak self] chapter in
+            self?.imageUrls = chapter.imageUrls
+            self?.tableView.reloadData()
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

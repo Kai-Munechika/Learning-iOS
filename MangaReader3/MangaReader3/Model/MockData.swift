@@ -10,7 +10,9 @@ import Foundation
 
 class MockData {
     
-    static let mockChapter = Chapter(number: "167", name: "Constant Changes", imageUrls: [
+    static let mockChapterUrl = "https://kissmanga.com/Manga/Tate-no-Yuusha-no-Nariagari/Vol-001-Ch-008-Read-Online?id=207420"
+    
+    static let mockChapter = Chapter(name: "Constant Changes", imageUrls: [
         "https://2.bp.blogspot.com/-wW246HYFsNs/XDZxdmlHbjI/AAAAAAACOGc/Er8a4PXlNpMZXtzDQJH-jfIZSdK0w6WkwCHMYCw/s0/000.png", 
         "https://2.bp.blogspot.com/-yB6u6RXa5fI/XDZxd8OS9FI/AAAAAAACOGg/RtcCx7xS5bksMqBPc4aMp_UatuJQSEAEACHMYCw/s0/001.png", 
         "https://2.bp.blogspot.com/-nnEQSiisxgk/XDZxeD7zi6I/AAAAAAACOGk/3QLf5_wXk4U0akXkAE1XVk8xyGZgRbjHwCHMYCw/s0/002.png", 
