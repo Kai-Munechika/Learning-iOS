@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0A244121F48B5F000601A1 /* MangaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A244021F48B5F000601A1 /* MangaViewController.swift */; };
+		2C0A244321F4A56A000601A1 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A244221F4A56A000601A1 /* Chapter.swift */; };
+		2C0A244521F4A57F000601A1 /* Manga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A244421F4A57F000601A1 /* Manga.swift */; };
 		2C54A59321EE74AC00F6097E /* ChapterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C54A59221EE74AC00F6097E /* ChapterTableViewCell.swift */; };
 		2CBFB23421E69D5D00692FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBFB23321E69D5D00692FDE /* AppDelegate.swift */; };
 		2CBFB23621E69D5D00692FDE /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBFB23521E69D5D00692FDE /* ChapterViewController.swift */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		18386B372342B16ED29F13A5 /* Pods-MangaReader3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaReader3.release.xcconfig"; path = "Pods/Target Support Files/Pods-MangaReader3/Pods-MangaReader3.release.xcconfig"; sourceTree = "<group>"; };
 		1AE2AB71270A8E19391A816C /* Pods-MangaReader3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaReader3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MangaReader3/Pods-MangaReader3.debug.xcconfig"; sourceTree = "<group>"; };
+		2C0A244021F48B5F000601A1 /* MangaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaViewController.swift; sourceTree = "<group>"; };
+		2C0A244221F4A56A000601A1 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		2C0A244421F4A57F000601A1 /* Manga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manga.swift; sourceTree = "<group>"; };
 		2C54A59221EE74AC00F6097E /* ChapterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterTableViewCell.swift; sourceTree = "<group>"; };
 		2CBFB23021E69D5D00692FDE /* MangaReader3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MangaReader3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBFB23321E69D5D00692FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +102,7 @@
 				2CBFB23C21E69D5E00692FDE /* LaunchScreen.storyboard */,
 				2CBFB23F21E69D5E00692FDE /* Info.plist */,
 				2C54A59221EE74AC00F6097E /* ChapterTableViewCell.swift */,
+				2C0A244021F48B5F000601A1 /* MangaViewController.swift */,
 			);
 			path = MangaReader3;
 			sourceTree = "<group>";
@@ -112,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				2CCEC32C21E8319800413267 /* MockData.swift */,
+				2C0A244221F4A56A000601A1 /* Chapter.swift */,
+				2C0A244421F4A57F000601A1 /* Manga.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,12 +261,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0A244521F4A57F000601A1 /* Manga.swift in Sources */,
 				2CBFB23621E69D5D00692FDE /* ChapterViewController.swift in Sources */,
 				2CCEC33021E9F33A00413267 /* ScaledHeightImageView.swift in Sources */,
 				2CCEC32D21E8319800413267 /* MockData.swift in Sources */,
 				2CBFB23421E69D5D00692FDE /* AppDelegate.swift in Sources */,
 				2CE4337621E6A44800217C58 /* KissMangaScraper.swift in Sources */,
+				2C0A244121F48B5F000601A1 /* MangaViewController.swift in Sources */,
 				2C54A59321EE74AC00F6097E /* ChapterTableViewCell.swift in Sources */,
+				2C0A244321F4A56A000601A1 /* Chapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

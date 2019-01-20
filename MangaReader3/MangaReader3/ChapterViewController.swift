@@ -24,6 +24,10 @@ class ChapterViewController: UITableViewController {
         }
     }
     
+    deinit {
+        print ("ChapterViewController deallocated")
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return imageUrls.count
     }

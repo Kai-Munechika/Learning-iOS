@@ -10,13 +10,43 @@ import Foundation
 import Erik
 import SwiftSoup
 
-
-struct Chapter {
-    let name: String
-    let imageUrls: [String]
-}
-
 class KissMangaScraper {
+    
+    // todo: persist chapter names, links, and dates
+    static func fetchManga(url: String, completion: @escaping (Manga) -> ()) {
+        fetchWebpage(url: url) { html in
+            do {
+                let doc: SwiftSoup.Document = try SwiftSoup.parse(html)
+                
+                let mangaName = try doc.select(".bigChar").first()?.text() ?? ""
+                
+                let barContent = try doc.select(".barContent").first()! 
+                let dataContainer = barContent.children().get(1)
+                let dataParagraphs = try dataContainer.select("p")
+                
+                let (otherNameElem, genresElem, authorsElem, statusAndViewsElem, descriptionElem) = (dataParagraphs.get(0), dataParagraphs.get(1), dataParagraphs.get(2), dataParagraphs.get(3), dataParagraphs.get(5))
+                
+                let otherNames = try otherNameElem.text().dropFirst("Other name: ".count).components(separatedBy: "; ")
+                let genres = try genresElem.text().dropFirst("Genres: ".count).components(separatedBy: ", ").map { Genre.init(rawValue: $0) ?? .err }
+                let authors = try authorsElem.text().dropFirst("Author: ".count).components(separatedBy: ", ")
+                
+                let components = try statusAndViewsElem.text().components(separatedBy: "           ")
+                let (status, numViews) = (
+                    Status.init(rawValue: components[0].dropFirst("Status: ".count).lowercased()) ?? .err, 
+                    Int(components[1].dropFirst("Views: ".count).dropLast("Bookmark".count).trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ",", with: ""))!
+                )
+                
+                let description = try descriptionElem.text()
+                let imgUrl = try (doc.select("img").last()?.attr("src"))!
+                
+                let manga = Manga(name: mangaName, otherNames: otherNames, numViews: numViews, genres: genres, description: description, status: status, authors: authors, imageUrl: imgUrl)
+                completion(manga)
+                
+            } catch {
+                print(error)
+            }
+        }
+    }
     
     static func fetchChapter(url: String, completion: @escaping (Chapter) -> ()) {
         fetchWebpage(url: url) { html in
@@ -50,9 +80,7 @@ class KissMangaScraper {
                 return
             } else if let doc = object {
                 guard let html = doc.body?.toHTML else { return }
-                
-                print(html)
-                
+                                
                 func isPreScreen(html: String) -> Bool {
                     do {
                         let waitString = "Please wait 5 seconds..."

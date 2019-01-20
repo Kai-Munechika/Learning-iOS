@@ -10,6 +10,7 @@ import Foundation
 
 class MockData {
     
+    static let mockMangaUrl = "https://kissmanga.com/Manga/Tate-no-Yuusha-no-Nariagari"
     static let mockChapterUrl = "https://kissmanga.com/Manga/Tate-no-Yuusha-no-Nariagari/Vol-001-Ch-008-Read-Online?id=207420"
     
     static let mockChapter = Chapter(name: "Constant Changes", imageUrls: [
