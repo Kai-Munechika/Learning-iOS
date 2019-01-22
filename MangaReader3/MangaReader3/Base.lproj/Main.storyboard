@@ -25,15 +25,23 @@
                                     <segue destination="qnM-JA-ac9" kind="show" id="S8r-t0-GEV"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ff3-Rd-FqE">
+                                <rect key="frame" x="67" y="64" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ff3-Rd-FqE" firstAttribute="centerX" secondItem="ema-Kk-e0V" secondAttribute="centerX" id="EAE-bw-xLh"/>
                             <constraint firstItem="86I-pZ-5PZ" firstAttribute="centerX" secondItem="ema-Kk-e0V" secondAttribute="centerX" id="Vxm-RA-d6U"/>
                             <constraint firstItem="86I-pZ-5PZ" firstAttribute="centerY" secondItem="ema-Kk-e0V" secondAttribute="centerY" id="cfo-Sh-IsZ"/>
+                            <constraint firstItem="ff3-Rd-FqE" firstAttribute="top" secondItem="2dv-JA-8cr" secondAttribute="top" id="nRj-aB-iRn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2dv-JA-8cr"/>
                     </view>
                     <navigationItem key="navigationItem" id="I3r-1q-Lvc"/>
+                    <connections>
+                        <outlet property="mangaImageView" destination="ff3-Rd-FqE" id="B8s-6s-RZ3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVX-QC-VC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
