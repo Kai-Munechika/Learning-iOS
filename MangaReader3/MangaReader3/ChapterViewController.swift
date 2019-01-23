@@ -18,9 +18,14 @@ class ChapterViewController: UITableViewController {
         super.viewDidLoad()
         tableView.allowsSelection = false;
         
-        MangaEden.fetchChapterPages() { [weak self] (chapterPages: [ChapterPage]) in
-            self?.chapterPages = chapterPages
-            self?.tableView.reloadData()
+        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+           MangaEden.fetchChapterPages() { [weak self] chapterPages in
+                self?.chapterPages = chapterPages
+                
+                DispatchQueue.main.async { [weak self] in
+                    self?.tableView.reloadData()
+                }
+            }
         }
     }
     
