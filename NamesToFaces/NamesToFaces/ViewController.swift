@@ -16,6 +16,28 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         super.viewDidLoad()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
+        
+        let defaults = UserDefaults.standard
+        
+        // NSCoding
+//        if let savedPeople = defaults.object(forKey: "people") as? Data {
+//            if let decodedPeople = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedPeople) as? [Person] {
+//                people = decodedPeople ?? [Person]()
+//            }
+//        }
+        
+        // Codable         
+        if let savedPeople = defaults.object(forKey: "people") as? Data {
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                people = try jsonDecoder.decode([Person].self, from: savedPeople)
+            } catch {
+                print("Failed to load people")
+            }
+        }
+        
+        // Once again, note the interesting syntax for decode() method: its first parameter is [Person].self, which is Swift’s way of saying “attempt to create an array of Person objects. This is why we don’t need a typecast when assigning to people – that method will automatically return [People], or if the conversion fails then the catch block will be executed instead.
     }
     
     @objc func addNewPerson() {
@@ -37,6 +59,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         
         let person = Person(name: "Unknown", image: imageName)
         people.append(person)
+        save()
         collectionView?.reloadData()
         
         dismiss(animated: true)
@@ -81,10 +104,31 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
             let newName = ac.textFields![0]
             person.name = newName.text!
             
+            self.save()
             self.collectionView?.reloadData()
         })
         
         present(ac, animated: true)
+    }
+    
+    // if we're using NSCoding over Codable
+//    func save() {
+//        // line 1 is what converts our array into a Data object, then lines 2 and 3 save that data object to UserDefaults.
+//        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: people, requiringSecureCoding: false) {
+//            let defaults = UserDefaults.standard
+//            defaults.set(savedData, forKey: "people")
+//        }
+//    }
+    
+    // Codable
+    func save() {
+        let jsonEncoder = JSONEncoder()
+        if let savedData = try? jsonEncoder.encode(people) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "people")
+        } else {
+            print("Failed to save people.")
+        }
     }
 }
 
