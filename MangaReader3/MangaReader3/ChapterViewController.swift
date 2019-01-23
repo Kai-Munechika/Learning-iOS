@@ -12,14 +12,14 @@ import Kingfisher
 // todo: update expected cell height to be moving average of imageView cells' heights loaded so far
 class ChapterViewController: UITableViewController {
         
-    var imageUrls = [String]()    
+    var chapterPages = [ChapterPage]()    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = false;
         
-        KissMangaScraper.fetchChapterImageUrls(url: MockData.mockChapterUrl) { [weak self] imageUrls in
-            self?.imageUrls = imageUrls
+        MangaEden.fetchChapterPages() { [weak self] (chapterPages: [ChapterPage]) in
+            self?.chapterPages = chapterPages
             self?.tableView.reloadData()
         }
     }
@@ -29,12 +29,12 @@ class ChapterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return imageUrls.count
+        return chapterPages.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Page", for: indexPath) as! ChapterTableViewCell
-        cell.pageImageView.kf.setImage(with: URL(string: imageUrls[indexPath.row])) { _ in
+        cell.pageImageView.kf.setImage(with: URL(string: chapterPages[indexPath.row].imageUrl)) { _ in
             cell.setNeedsLayout()
             
             UIView.performWithoutAnimation {
@@ -43,6 +43,16 @@ class ChapterViewController: UITableViewController {
             }
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let chapterPage = chapterPages[indexPath.row]
+        
+        let screenWidth = view.frame.width
+        let ratio = screenWidth / CGFloat(integerLiteral: chapterPage.width)
+        let scaledHeight = ratio * CGFloat(integerLiteral: chapterPage.height)
+        
+        return scaledHeight
     }
 }
 
