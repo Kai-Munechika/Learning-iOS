@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qnM-JA-ac9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B8d-Br-mBC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,22 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ff3-Rd-FqE">
+                                <rect key="frame" x="67" y="64" width="240" height="128"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86I-pZ-5PZ">
-                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
+                                <rect key="frame" x="164.5" y="617" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="qnM-JA-ac9" kind="show" id="S8r-t0-GEV"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ff3-Rd-FqE">
-                                <rect key="frame" x="67" y="64" width="240" height="128"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ff3-Rd-FqE" firstAttribute="centerX" secondItem="ema-Kk-e0V" secondAttribute="centerX" id="EAE-bw-xLh"/>
+                            <constraint firstItem="2dv-JA-8cr" firstAttribute="bottom" secondItem="86I-pZ-5PZ" secondAttribute="bottom" constant="20" id="Otb-0m-2Zc"/>
                             <constraint firstItem="86I-pZ-5PZ" firstAttribute="centerX" secondItem="ema-Kk-e0V" secondAttribute="centerX" id="Vxm-RA-d6U"/>
-                            <constraint firstItem="86I-pZ-5PZ" firstAttribute="centerY" secondItem="ema-Kk-e0V" secondAttribute="centerY" id="cfo-Sh-IsZ"/>
                             <constraint firstItem="ff3-Rd-FqE" firstAttribute="top" secondItem="2dv-JA-8cr" secondAttribute="top" id="nRj-aB-iRn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2dv-JA-8cr"/>
@@ -87,7 +87,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDn-ri-yiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736.79999999999995" y="-55.322338830584712"/>
+            <point key="canvasLocation" x="740" y="-55"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dd0-pj-eZR">

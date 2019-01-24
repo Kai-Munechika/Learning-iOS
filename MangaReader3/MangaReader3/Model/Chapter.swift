@@ -9,7 +9,8 @@
 import Foundation
 
 struct Chapter {
-    let name: String
-    let url: String
-    let dateAdded: String
+    let number: Double
+    let epochDateAdded: Int
+    let title: String?
+    let id: String
 }

@@ -20,7 +20,6 @@
 		2CBFB23E21E69D5E00692FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBFB23C21E69D5E00692FDE /* LaunchScreen.storyboard */; };
 		2CCEC32D21E8319800413267 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCEC32C21E8319800413267 /* MockData.swift */; };
 		2CCEC33021E9F33A00413267 /* ScaledHeightImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCEC32F21E9F33A00413267 /* ScaledHeightImageView.swift */; };
-		2CE4337621E6A44800217C58 /* KissMangaScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4337521E6A44800217C58 /* KissMangaScraper.swift */; };
 		C114F5E7C9740702A8CFA738 /* Pods_MangaReader3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EEF26D767029F7E2714834 /* Pods_MangaReader3.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +41,6 @@
 		2CBFB23F21E69D5E00692FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CCEC32C21E8319800413267 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		2CCEC32F21E9F33A00413267 /* ScaledHeightImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledHeightImageView.swift; sourceTree = "<group>"; };
-		2CE4337521E6A44800217C58 /* KissMangaScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KissMangaScraper.swift; sourceTree = "<group>"; };
 		D2EEF26D767029F7E2714834 /* Pods_MangaReader3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MangaReader3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,7 +68,6 @@
 		2C0A243F21F4225A000601A1 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				2CE4337521E6A44800217C58 /* KissMangaScraper.swift */,
 				2C328C6521F83E6000BB17E5 /* MangaEden.swift */,
 			);
 			path = Service;
@@ -106,7 +103,6 @@
 				2CBFB23A21E69D5E00692FDE /* Assets.xcassets */,
 				2CBFB23C21E69D5E00692FDE /* LaunchScreen.storyboard */,
 				2CBFB23F21E69D5E00692FDE /* Info.plist */,
-				2C54A59221EE74AC00F6097E /* ChapterTableViewCell.swift */,
 				2C0A244021F48B5F000601A1 /* MangaViewController.swift */,
 			);
 			path = MangaReader3;
@@ -115,6 +111,7 @@
 		2CCEC32E21E9F32700413267 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C54A59221EE74AC00F6097E /* ChapterTableViewCell.swift */,
 				2CCEC32F21E9F33A00413267 /* ScaledHeightImageView.swift */,
 			);
 			path = View;
@@ -272,7 +269,6 @@
 				2CCEC33021E9F33A00413267 /* ScaledHeightImageView.swift in Sources */,
 				2CCEC32D21E8319800413267 /* MockData.swift in Sources */,
 				2CBFB23421E69D5D00692FDE /* AppDelegate.swift in Sources */,
-				2CE4337621E6A44800217C58 /* KissMangaScraper.swift in Sources */,
 				2C328C6621F83E6000BB17E5 /* MangaEden.swift in Sources */,
 				2C0A244121F48B5F000601A1 /* MangaViewController.swift in Sources */,
 				2C54A59321EE74AC00F6097E /* ChapterTableViewCell.swift in Sources */,
