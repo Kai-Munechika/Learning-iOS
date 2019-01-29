@@ -28,10 +28,8 @@ class MangaViewController: UIViewController {
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
             MangaEden.fetchManga() { [weak self] manga in
                 
-                self?.mangaImageView.kf.setImage(with: URL(string: manga.imageUrl))
-                
                 DispatchQueue.main.async {
-                    self?.background.kf.setImage(with: URL(string: manga.imageUrl)) { result in
+                    self?.mangaImageView.kf.setImage(with: URL(string: manga.imageUrl)) { result in
                         if (result.isSuccess) {
                             self?.background.image = self?.mangaImageView.image
                             self?.applyBlurEffect(imageView: (self?.background)!)
