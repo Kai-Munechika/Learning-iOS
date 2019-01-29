@@ -43,8 +43,8 @@
                             <constraint firstItem="2dv-JA-8cr" firstAttribute="bottom" secondItem="86I-pZ-5PZ" secondAttribute="bottom" constant="20" id="Otb-0m-2Zc"/>
                             <constraint firstItem="hAz-h0-ZfS" firstAttribute="leading" secondItem="2dv-JA-8cr" secondAttribute="leading" id="VJX-ZK-hPx"/>
                             <constraint firstItem="86I-pZ-5PZ" firstAttribute="centerX" secondItem="ema-Kk-e0V" secondAttribute="centerX" id="Vxm-RA-d6U"/>
+                            <constraint firstItem="ff3-Rd-FqE" firstAttribute="top" secondItem="ema-Kk-e0V" secondAttribute="top" constant="20" id="c6v-40-Buw"/>
                             <constraint firstItem="2dv-JA-8cr" firstAttribute="trailing" secondItem="hAz-h0-ZfS" secondAttribute="trailing" id="ffD-GE-t9Q"/>
-                            <constraint firstItem="ff3-Rd-FqE" firstAttribute="top" secondItem="ema-Kk-e0V" secondAttribute="topMargin" id="lQh-p3-suh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2dv-JA-8cr"/>
                     </view>
@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="1679.2" y="-55.322338830584712"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="RsR-C9-Sfm">
             <objects>
-                <viewController id="NIb-sa-Ljv" sceneMemberID="viewController">
+                <viewController id="NIb-sa-Ljv" customClass="HomeViewController" customModule="MangaReader3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jz2-ME-iL6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
