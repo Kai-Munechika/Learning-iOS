@@ -79,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				2CBFB23221E69D5D00692FDE /* MangaReader3 */,
-				2CBFB23121E69D5D00692FDE /* Products */,
 				151EE1E73C03A648CA55FFFA /* Pods */,
 				400A896F2462A848145AE964 /* Frameworks */,
 			);
@@ -91,6 +90,7 @@
 				2CBFB23021E69D5D00692FDE /* MangaReader3.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		2CBFB23221E69D5D00692FDE /* MangaReader3 */ = {
@@ -102,6 +102,7 @@
 				2C9AF830220114CA002C8E6C /* HomeViewController.swift */,
 				2C0A244021F48B5F000601A1 /* MangaViewController.swift */,
 				2CBFB23A21E69D5E00692FDE /* Assets.xcassets */,
+				2CBFB23121E69D5D00692FDE /* Products */,
 				2CBFB23C21E69D5E00692FDE /* LaunchScreen.storyboard */,
 				2CBFB23721E69D5D00692FDE /* Main.storyboard */,
 				2CE4337421E6A3AC00217C58 /* Model */,

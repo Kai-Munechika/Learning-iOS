@@ -25,7 +25,7 @@
                                 <rect key="frame" x="164.5" y="617" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="qnM-JA-ac9" kind="show" id="S8r-t0-GEV"/>
+                                    <segue destination="qnM-JA-ac9" kind="show" id="cOG-BX-ZCJ"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ff3-Rd-FqE" customClass="ScaledHeightImageView" customModule="MangaReader3" customModuleProvider="target">
@@ -43,7 +43,7 @@
                             <constraint firstItem="2dv-JA-8cr" firstAttribute="bottom" secondItem="86I-pZ-5PZ" secondAttribute="bottom" constant="20" id="Otb-0m-2Zc"/>
                             <constraint firstItem="hAz-h0-ZfS" firstAttribute="leading" secondItem="2dv-JA-8cr" secondAttribute="leading" id="VJX-ZK-hPx"/>
                             <constraint firstItem="86I-pZ-5PZ" firstAttribute="centerX" secondItem="ema-Kk-e0V" secondAttribute="centerX" id="Vxm-RA-d6U"/>
-                            <constraint firstItem="ff3-Rd-FqE" firstAttribute="top" secondItem="ema-Kk-e0V" secondAttribute="top" constant="20" id="c6v-40-Buw"/>
+                            <constraint firstItem="ff3-Rd-FqE" firstAttribute="top" secondItem="ema-Kk-e0V" secondAttribute="top" constant="40" id="c6v-40-Buw"/>
                             <constraint firstItem="2dv-JA-8cr" firstAttribute="trailing" secondItem="hAz-h0-ZfS" secondAttribute="trailing" id="ffD-GE-t9Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2dv-JA-8cr"/>
@@ -62,7 +62,7 @@
         <scene sceneID="5XO-G1-Jub">
             <objects>
                 <tableViewController id="qnM-JA-ac9" customClass="ChapterViewController" customModule="MangaReader3" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zcy-fe-cLp">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" id="Zcy-fe-cLp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -95,10 +95,11 @@
                             <outlet property="delegate" destination="qnM-JA-ac9" id="ejA-Cw-6Z0"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="pI3-E7-xVx"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDn-ri-yiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1679.2" y="-55.322338830584712"/>
+            <point key="canvasLocation" x="1852" y="-55"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="RsR-C9-Sfm">
