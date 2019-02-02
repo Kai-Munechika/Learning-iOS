@@ -9,20 +9,21 @@
 import UIKit
 import Kingfisher
 
+// todo: handle/fix error where app crashes if we navigate backwards when images are still loading
 // todo: update expected cell height to be moving average of imageView cells' heights loaded so far
 class ChapterViewController: UITableViewController {
-        
-    var chapterPages = [ChapterPage]()    
+    
+    var chapterId: String = ""
+    var chapterPages = [ChapterPage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = false;
         
-        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
-           MangaEden.fetchChapterPages() { [weak self] chapterPages in
-                self?.chapterPages = chapterPages
-                
-                DispatchQueue.main.async { [weak self] in
+        DispatchQueue.global(qos: .userInteractive).async { [unowned self] in
+            MangaEden.fetchChapterPages(chapterId: self.chapterId) { [weak self] chapterPages in
+                DispatchQueue.main.async {
+                    self?.chapterPages = chapterPages
                     self?.tableView.reloadData()
                 }
             }

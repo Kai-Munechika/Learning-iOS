@@ -10,18 +10,30 @@ import UIKit
 import Kingfisher
 import CoreImage
 
-class MangaViewController: UIViewController {
+class MangaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    let CellIdentifier = "MangaChapterCell"
     
     @IBOutlet weak var mangaImageView: UIImageView!
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
     
-    let darkGray = UIColor(red: 0x1D, green: 0x1D, blue: 0x2F)
+    var chapters = [Chapter]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    // to use for tableView background
+    // let darkGray = UIColor(red: 0x1D, green: 0x1D, blue: 0x2F)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CellIdentifier)
         
-        background.image = UIImage.from(color: darkGray)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
             MangaEden.fetchManga() { [weak self] manga in
@@ -29,6 +41,7 @@ class MangaViewController: UIViewController {
                 DispatchQueue.main.async {
                     self?.mangaImageView.kf.setImage(with: URL(string: manga.imageUrl)) { result in
                         if (result.isSuccess) {
+                            self?.chapters = manga.chapters
                             self?.background.image = self?.mangaImageView.image
                             self?.applyBlurEffect(imageView: (self?.background)!)
                         }
@@ -47,6 +60,29 @@ class MangaViewController: UIViewController {
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = imageView.frame
         imageView.addSubview(blurView)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier, for: indexPath)
+        cell.textLabel?.text = chapters[indexPath.row].formattedTitle
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return chapters.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        let chapterId = chapters[indexPath.row].id
+        print(chapterId)
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let chapterViewController = storyBoard.instantiateViewController(withIdentifier: "ChapterViewController") as! ChapterViewController
+        chapterViewController.chapterId = chapterId
+        self.navigationController?.pushViewController(chapterViewController, animated: true)
     }
 }
 
