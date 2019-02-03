@@ -45,6 +45,7 @@
                     <navigationItem key="navigationItem" id="n1S-Xu-gFr"/>
                     <connections>
                         <outlet property="countLabel" destination="mMO-c8-eFM" id="ArM-8x-Geu"/>
+                        <outlet property="tapButton" destination="ToS-Tp-LPt" id="NHe-gc-AYh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
