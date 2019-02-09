@@ -11,7 +11,7 @@ import UIKit
 class TodoListViewController: UITableViewController {
     
     let defaults = UserDefaults.standard
-    var itemArray = [String]() {
+    var itemArray = [TodoItem]() {
         didSet {
             self.defaults.setValue(self.itemArray, forKey: "TodoListArray")
             tableView.reloadData()
@@ -21,7 +21,7 @@ class TodoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
+        if let items = defaults.array(forKey: "TodoListArray") as? [TodoItem] {
             itemArray = items
         }
     }
@@ -32,19 +32,17 @@ class TodoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "todoListTableCell", for: indexPath)
-        cell.textLabel?.text = itemArray[indexPath.row]
+        cell.textLabel?.text = itemArray[indexPath.row].title
+        cell.accessoryType = itemArray[indexPath.row].isChecked ? .checkmark : .none
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        itemArray[indexPath.row].isChecked = !itemArray[indexPath.row].isChecked 
+
         let cell = tableView.cellForRow(at: indexPath)!
-        switch cell.accessoryType {
-        case .checkmark:
-            cell.accessoryType = .none
-        default:
-            cell.accessoryType = .checkmark
-        }
+        cell.accessoryType = itemArray[indexPath.row].isChecked ? .checkmark : .none  
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -60,7 +58,7 @@ class TodoListViewController: UITableViewController {
         }
         
         alert.addAction(UIAlertAction(title: "Add Todoey", style: .default) { (action) in
-            self.itemArray.append(textField.text!)
+            self.itemArray.append(TodoItem(title: textField.text!, isChecked: false))
         })
         
         present(alert, animated: true, completion: nil)
