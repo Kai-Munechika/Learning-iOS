@@ -8,7 +8,9 @@
 
 import Foundation
 
-class TodoItem {
+// Codable: the item type is now able to encode/decode itself into a plist or json
+// requires that all properties are primitives
+class TodoItem: Codable {
     var title: String = ""
     var isChecked: Bool = false
     

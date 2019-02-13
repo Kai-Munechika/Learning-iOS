@@ -10,20 +10,20 @@ import UIKit
 
 class TodoListViewController: UITableViewController {
     
-    let defaults = UserDefaults.standard
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+    
+    
+    
     var itemArray = [TodoItem]() {
         didSet {
-            self.defaults.setValue(self.itemArray, forKey: "TodoListArray")
+            saveItems()
             tableView.reloadData()
         }
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        if let items = defaults.array(forKey: "TodoListArray") as? [TodoItem] {
-            itemArray = items
-        }
+        super.viewDidLoad()      
+        loadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,6 +44,7 @@ class TodoListViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath)!
         cell.accessoryType = itemArray[indexPath.row].isChecked ? .checkmark : .none  
         
+        saveItems()
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -65,5 +66,25 @@ class TodoListViewController: UITableViewController {
         
     }
     
+    func saveItems() {
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataFilePath!)
+        } catch {
+            print(error)
+        }
+    }
+    
+    func loadData() {
+        if let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            do {
+                itemArray = try decoder.decode([TodoItem].self, from: data)
+            } catch {
+                print("ERROR!", error)
+            }
+        }
+    }
 }
 
