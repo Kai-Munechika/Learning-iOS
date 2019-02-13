@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class TodoListViewController: UITableViewController {
     
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    
-    var itemArray = [TodoItem]() {
+    var itemArray = [Item]() {
         didSet {
             saveItems()
             tableView.reloadData()
@@ -33,16 +34,16 @@ class TodoListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "todoListTableCell", for: indexPath)
         cell.textLabel?.text = itemArray[indexPath.row].title
-        cell.accessoryType = itemArray[indexPath.row].isChecked ? .checkmark : .none
+        cell.accessoryType = itemArray[indexPath.row].isDone ? .checkmark : .none
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        itemArray[indexPath.row].isChecked = !itemArray[indexPath.row].isChecked 
-
+        itemArray[indexPath.row].isDone = !itemArray[indexPath.row].isDone 
+        
         let cell = tableView.cellForRow(at: indexPath)!
-        cell.accessoryType = itemArray[indexPath.row].isChecked ? .checkmark : .none  
+        cell.accessoryType = itemArray[indexPath.row].isDone ? .checkmark : .none  
         
         saveItems()
         tableView.deselectRow(at: indexPath, animated: true)
@@ -59,7 +60,11 @@ class TodoListViewController: UITableViewController {
         }
         
         alert.addAction(UIAlertAction(title: "Add Todoey", style: .default) { (action) in
-            self.itemArray.append(TodoItem(title: textField.text!, isChecked: false))
+            let newItem = Item(context: self.context)
+            newItem.title = textField.text!
+            newItem.isDone = false
+            
+            self.itemArray.append(newItem)
         })
         
         present(alert, animated: true, completion: nil)
@@ -67,23 +72,19 @@ class TodoListViewController: UITableViewController {
     }
     
     func saveItems() {
-        let encoder = PropertyListEncoder()
         do {
-            let data = try encoder.encode(itemArray)
-            try data.write(to: dataFilePath!)
+            try context.save()
         } catch {
             print(error)
         }
     }
     
     func loadData() {
-        if let data = try? Data(contentsOf: dataFilePath!) {
-            let decoder = PropertyListDecoder()
-            do {
-                itemArray = try decoder.decode([TodoItem].self, from: data)
-            } catch {
-                print("ERROR!", error)
-            }
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        do {
+            itemArray = try context.fetch(request)
+        } catch {
+            print(error)
         }
     }
 }
