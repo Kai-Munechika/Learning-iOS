@@ -12,11 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var exercises = [String]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    var exercises = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,28 +23,31 @@ class ViewController: UIViewController {
     
     // MARK: - UI Event Listeners
     @IBAction func addTapped(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Add new exercise", message: "", preferredStyle: .alert)
-        
-        var textField = UITextField()
-        alert.addTextField { (_textField) in
-            textField = _textField
-            textField.placeholder = "Add new exercise"
+        let alert = getTextFieldAlert(title: "Add new exercise", textFieldPlaceholder: "Exercise name", actionTitle: "Add") { (textField) in
+            self.exercises.append(textField.text!)
+            
+            let indexPath = IndexPath(row: self.exercises.count - 1, section: 0)
+            self.tableView.insertRows(at: [indexPath], with: .automatic)
         }
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-
-        alert.addAction(UIAlertAction(title: "Add", style: .default) { (action) in
-            if !textField.text!.isEmpty {
-                self.exercises.append(textField.text!)
-            } else {
-                // todo: alert user
-                print("nil exercise not added")
-            }
-        })
         
         present(alert, animated: true, completion: nil)
     }
+    
+    func getTextFieldAlert(title: String, textFieldPlaceholder: String, actionTitle: String, actionCallback: @escaping (UITextField) -> Void) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
+        alert.addTextField { $0.placeholder = textFieldPlaceholder }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel)) 
+        alert.addAction(UIAlertAction(title: actionTitle, style: .default) { (action) in
+            let textField = alert.textFields![0]
+            if textField.text!.isEmpty { return } // todo: notify/halt user -- empty string is invalid 
+            
+            actionCallback(textField)
+        })
+        
+        return alert
+    }
 }
+
 
 // MARK: - TableView Delegate/DataSource Methods
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -66,5 +65,23 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { action, index in
+            self.exercises.remove(at: index.row)
+            self.tableView.deleteRows(at: [index], with: .automatic)
+        }
+        
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
+            let alert = self.getTextFieldAlert(title: "Change exercise name", textFieldPlaceholder: "Exercise name", actionTitle: "Save") { (textField) in
+                self.exercises[index.row] = textField.text!
+                tableView.reloadRows(at: [index], with: .automatic)
+            }
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        return [deleteAction, editAction]
     }
 }
