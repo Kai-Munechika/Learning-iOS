@@ -11,19 +11,19 @@ import CoreData
 
 class TodoListViewController: UITableViewController {
     
+    
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var itemArray = [Item]() {
         didSet {
-            saveItems()
             tableView.reloadData()
         }
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()      
+        super.viewDidLoad()
         loadData()
     }
     
@@ -65,6 +65,7 @@ class TodoListViewController: UITableViewController {
             newItem.isDone = false
             
             self.itemArray.append(newItem)
+            self.saveItems()
         })
         
         present(alert, animated: true, completion: nil)
@@ -79,8 +80,7 @@ class TodoListViewController: UITableViewController {
         }
     }
     
-    func loadData() {
-        let request: NSFetchRequest<Item> = Item.fetchRequest()
+    func loadData(with request: NSFetchRequest<Item> = Item.fetchRequest()) {
         do {
             itemArray = try context.fetch(request)
         } catch {
@@ -89,3 +89,24 @@ class TodoListViewController: UITableViewController {
     }
 }
 
+// MARK: - Search bar methods
+extension TodoListViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        loadData(with: request)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadData()
+            
+            DispatchQueue.main.async {
+                // to hide keyboard
+                searchBar.resignFirstResponder()
+            }
+        }
+    }
+}

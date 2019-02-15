@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    // MARK: - Utility Methods
     func getTextFieldAlert(title: String, textFieldPlaceholder: String, actionTitle: String, actionCallback: @escaping (UITextField) -> Void) -> UIAlertController {
         let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
         alert.addTextField { $0.placeholder = textFieldPlaceholder }
