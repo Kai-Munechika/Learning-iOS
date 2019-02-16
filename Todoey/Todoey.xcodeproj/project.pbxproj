@@ -13,6 +13,7 @@
 		2C8615A7220F85AC00A6725F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C8615A5220F85AC00A6725F /* Main.storyboard */; };
 		2C8615A9220F85AD00A6725F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C8615A8220F85AD00A6725F /* Assets.xcassets */; };
 		2C8615AC220F85AD00A6725F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C8615AA220F85AD00A6725F /* LaunchScreen.storyboard */; };
+		2CA299D022178F15009BD204 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA299CF22178F15009BD204 /* CategoriesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2C8615A8220F85AD00A6725F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C8615AB220F85AD00A6725F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C8615AD220F85AD00A6725F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CA299CF22178F15009BD204 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				2C8615A3220F85AC00A6725F /* TodoListViewController.swift */,
+				2CA299CF22178F15009BD204 /* CategoriesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			files = (
 				2C8615A4220F85AC00A6725F /* TodoListViewController.swift in Sources */,
 				2C42E86F2214DA1E007FC023 /* DataModel.xcdatamodeld in Sources */,
+				2CA299D022178F15009BD204 /* CategoriesViewController.swift in Sources */,
 				2C8615A2220F85AC00A6725F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
