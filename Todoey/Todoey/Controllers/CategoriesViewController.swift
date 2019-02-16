@@ -19,7 +19,7 @@ class CategoriesViewController: UITableViewController  {
         loadCategories()
     }
     
-    // MARK: - Table view datasource and delegate methods
+    // MARK: - Table view datasource methods 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoryArray.count
     }
@@ -30,8 +30,17 @@ class CategoriesViewController: UITableViewController  {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    // MARK: - Table view delegate methods
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
+        performSegue(withIdentifier: "gotoItems", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! TodoListViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedCategory = categoryArray[indexPath.row]
+        }
     }
     
     // MARK: - Add new categories
