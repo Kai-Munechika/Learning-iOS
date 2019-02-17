@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wBm-hY-1AY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DEd-KY-lan">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -74,6 +74,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJN-Lb-Ujf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="266" y="134"/>
+        </scene>
+        <!--Charts View Controller-->
+        <scene sceneID="86p-hR-ij1">
+            <objects>
+                <viewController id="DEd-KY-lan" customClass="ChartsViewController" customModule="ExerciseTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VtK-xC-q0R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nid-9t-Q9S" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nid-9t-Q9S" firstAttribute="leading" secondItem="K9l-mf-4HN" secondAttribute="leading" id="4lv-yy-vgz"/>
+                            <constraint firstItem="Nid-9t-Q9S" firstAttribute="top" secondItem="K9l-mf-4HN" secondAttribute="top" id="IKZ-6i-AHG"/>
+                            <constraint firstItem="K9l-mf-4HN" firstAttribute="trailing" secondItem="Nid-9t-Q9S" secondAttribute="trailing" id="L01-uV-J2U"/>
+                            <constraint firstItem="Nid-9t-Q9S" firstAttribute="bottom" secondItem="K9l-mf-4HN" secondAttribute="bottom" id="b4j-nL-uZb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="K9l-mf-4HN"/>
+                    </view>
+                    <connections>
+                        <outlet property="lineChartView" destination="Nid-9t-Q9S" id="akr-bQ-wV6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AhX-r0-mfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="256.80000000000001" y="876.61169415292363"/>
         </scene>
     </scenes>
 </document>
