@@ -114,7 +114,7 @@ extension ViewController: UITableViewDelegate {
             
             alert.addTextField { $0.placeholder = "App name"; $0.text =  selectedItem.appName }
             alert.addTextField { $0.placeholder = "Email"; $0.text = selectedItem.email }
-            alert.addTextField { $0.placeholder = "Password"; $0.isSecureTextEntry = true; $0.text = selectedItem.password }
+            alert.addTextField { $0.placeholder = "Password"; $0.isSecureTextEntry = true; }
             
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel)) 
             alert.addAction(UIAlertAction(title: "Save", style: .default) {(action) in
