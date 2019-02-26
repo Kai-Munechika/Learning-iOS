@@ -14,6 +14,7 @@
 		2C6A84E5222414AA00A02F8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C6A84E4222414AA00A02F8A /* Assets.xcassets */; };
 		2C6A84E8222414AA00A02F8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C6A84E6222414AA00A02F8A /* LaunchScreen.storyboard */; };
 		2C6A84F822241CB900A02F8A /* AccountPrototypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A84F722241CB900A02F8A /* AccountPrototypeCell.swift */; };
+		2C6A84FB2224FE9900A02F8A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6A84FA2224FE9900A02F8A /* LocalAuthentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2C6A84E7222414AA00A02F8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C6A84E9222414AA00A02F8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C6A84F722241CB900A02F8A /* AccountPrototypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPrototypeCell.swift; sourceTree = "<group>"; };
+		2C6A84FA2224FE9900A02F8A /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C6A84FB2224FE9900A02F8A /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				2C6A84D9222414A900A02F8A /* PasswordManager */,
 				2C6A84D8222414A900A02F8A /* Products */,
+				2C6A84F92224FE9900A02F8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +104,14 @@
 				2C6A84E4222414AA00A02F8A /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2C6A84F92224FE9900A02F8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C6A84FA2224FE9900A02F8A /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
