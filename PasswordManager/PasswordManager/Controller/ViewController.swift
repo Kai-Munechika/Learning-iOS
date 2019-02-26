@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var items = [AccountItem]()
     
     override func viewDidLoad() {
@@ -21,11 +23,40 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.rowHeight = 68
         
-        items.append(AccountItem(appName: "M1 Finance", email: "kaim808@gmail.com", password: "testpassword123"))
-        items.append(AccountItem(appName: "Robinhood", email: "kaim808@gmail.com", password: "testpassword123"))
+//        var accountItem = AccountItem(context: context)
+//        accountItem.appName = "M1 Finance"
+//        accountItem.email = "kaim808@gmail.com" 
+//        accountItem.password = "testpassword123"
+//                
+//        accountItem = AccountItem(context: context)
+//        accountItem.appName = "Robinhood"
+//        accountItem.email = "kaim808@gmail.com" 
+//        accountItem.password = "testpassword123"
+//        saveItems()
+        
+        loadItems()
     }
     
     @IBAction func addClicked(_ sender: UIBarButtonItem) {
+    }
+    
+    func saveItems() {
+        do {
+            try context.save()
+        } catch {
+            print("Error saving context \(error)")
+        }
+    }
+    
+    func loadItems() {
+        let request: NSFetchRequest<AccountItem> = AccountItem.fetchRequest()
+        
+        do {
+            items = try context.fetch(request)
+            tableView.reloadData()
+        } catch {
+            print("Error loading data \(error)")
+        }
     }
 }
 
@@ -48,5 +79,8 @@ extension ViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate methods
 extension ViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 

@@ -13,7 +13,6 @@
 		2C6A84E3222414A900A02F8A /* PasswordManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A84E1222414A900A02F8A /* PasswordManager.xcdatamodeld */; };
 		2C6A84E5222414AA00A02F8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C6A84E4222414AA00A02F8A /* Assets.xcassets */; };
 		2C6A84E8222414AA00A02F8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C6A84E6222414AA00A02F8A /* LaunchScreen.storyboard */; };
-		2C6A84F42224160B00A02F8A /* AccountItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A84F32224160B00A02F8A /* AccountItem.swift */; };
 		2C6A84F822241CB900A02F8A /* AccountPrototypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A84F722241CB900A02F8A /* AccountPrototypeCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,6 @@
 		2C6A84E4222414AA00A02F8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C6A84E7222414AA00A02F8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C6A84E9222414AA00A02F8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C6A84F32224160B00A02F8A /* AccountItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountItem.swift; sourceTree = "<group>"; };
 		2C6A84F722241CB900A02F8A /* AccountPrototypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPrototypeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +64,6 @@
 				2C6A84EF2224155D00A02F8A /* View */,
 				2C6A84DA222414A900A02F8A /* AppDelegate.swift */,
 				2C6A84E9222414AA00A02F8A /* Info.plist */,
-				2C6A84E1222414A900A02F8A /* PasswordManager.xcdatamodeld */,
 			);
 			path = PasswordManager;
 			sourceTree = "<group>";
@@ -83,7 +80,7 @@
 		2C6A84F02224158A00A02F8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2C6A84F32224160B00A02F8A /* AccountItem.swift */,
+				2C6A84E1222414A900A02F8A /* PasswordManager.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,7 +173,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C6A84F42224160B00A02F8A /* AccountItem.swift in Sources */,
 				2C6A84E3222414A900A02F8A /* PasswordManager.xcdatamodeld in Sources */,
 				2C6A84F822241CB900A02F8A /* AccountPrototypeCell.swift in Sources */,
 				2C6A84DD222414A900A02F8A /* ViewController.swift in Sources */,
