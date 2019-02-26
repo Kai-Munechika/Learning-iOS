@@ -30,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robinhood" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75v-LI-ROM">
-                                                    <rect key="frame" x="15" y="8" width="102.5" height="24"/>
+                                                    <rect key="frame" x="15" y="8" width="360" height="24"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -46,6 +46,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="75v-LI-ROM" secondAttribute="trailing" id="Bms-fj-zAn"/>
                                                 <constraint firstItem="rZp-H9-GYx" firstAttribute="top" secondItem="75v-LI-ROM" secondAttribute="bottom" constant="6" id="XZG-Be-Vyp"/>
                                                 <constraint firstItem="75v-LI-ROM" firstAttribute="top" secondItem="SEk-Ht-zqO" secondAttribute="top" constant="8" id="c5v-X7-99q"/>
                                                 <constraint firstItem="rZp-H9-GYx" firstAttribute="leading" secondItem="SEk-Ht-zqO" secondAttribute="leadingMargin" id="jAj-ag-tvt"/>
