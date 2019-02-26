@@ -15,6 +15,7 @@
 		2C6A84E8222414AA00A02F8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C6A84E6222414AA00A02F8A /* LaunchScreen.storyboard */; };
 		2C6A84F822241CB900A02F8A /* AccountPrototypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A84F722241CB900A02F8A /* AccountPrototypeCell.swift */; };
 		2C6A84FB2224FE9900A02F8A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6A84FA2224FE9900A02F8A /* LocalAuthentication.framework */; };
+		2C6A84FF222512AE00A02F8A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A84FE222512AE00A02F8A /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2C6A84E9222414AA00A02F8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C6A84F722241CB900A02F8A /* AccountPrototypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPrototypeCell.swift; sourceTree = "<group>"; };
 		2C6A84FA2224FE9900A02F8A /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		2C6A84FE222512AE00A02F8A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				2C6A84DC222414A900A02F8A /* ViewController.swift */,
+				2C6A84FE222512AE00A02F8A /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				2C6A84E3222414A900A02F8A /* PasswordManager.xcdatamodeld in Sources */,
 				2C6A84F822241CB900A02F8A /* AccountPrototypeCell.swift in Sources */,
 				2C6A84DD222414A900A02F8A /* ViewController.swift in Sources */,
+				2C6A84FF222512AE00A02F8A /* LoginViewController.swift in Sources */,
 				2C6A84DB222414A900A02F8A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

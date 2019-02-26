@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JIW-r6-4Wq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i8o-Lz-dlb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -86,6 +86,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="952.79999999999995" y="-564.46776611694156"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="3Gf-fY-EVS">
+            <objects>
+                <viewController id="i8o-Lz-dlb" customClass="LoginViewController" customModule="PasswordManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ecp-2j-UtN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoK-HK-xo3">
+                                <rect key="frame" x="168.5" y="318.5" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginPressed" destination="i8o-Lz-dlb" eventType="touchUpInside" id="f2p-Fm-3wd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WoK-HK-xo3" firstAttribute="centerY" secondItem="Ecp-2j-UtN" secondAttribute="centerY" id="MRn-aY-gaV"/>
+                            <constraint firstItem="WoK-HK-xo3" firstAttribute="centerX" secondItem="Ecp-2j-UtN" secondAttribute="centerX" id="fhe-qK-kKy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="deY-f6-qFC"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="WoK-HK-xo3" id="9aP-5z-WXg"/>
+                        <segue destination="JIW-r6-4Wq" kind="show" identifier="gotoMain" id="ELP-j3-pmz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yE0-9y-GCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-690" y="-564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dFv-CE-XZX">
