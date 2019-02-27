@@ -150,7 +150,7 @@ extension ViewController {
                 if success {
                     DispatchQueue.main.async {
                         let alertController = UIAlertController(title: "\(item.appName!) ", 
-                            message: "Email: \(item.email!)\nPassword: \(item.password!)",
+                            message: "\(item.email!)\nPassword: \(item.password!)",
                             preferredStyle: .alert)
                         
                         alertController.addAction(UIAlertAction(title: "Ok", style: .default))
