@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 68
+        tableView.rowHeight = 102
         
         loadItems()
     }
@@ -87,6 +87,7 @@ extension ViewController: UITableViewDataSource {
         let item = items[indexPath.row]
         cell.appNameLabel.text = item.appName
         cell.emailLabel.text = item.email
+        cell.passwordLabel.text = item.password
         return cell
     }
 }
@@ -95,7 +96,9 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        authenticationWithTouchID(item: items[indexPath.row])
+        // uncomment this if we want to force users to authenticate before viewing passwords
+        // authenticationWithTouchID(item: items[indexPath.row])
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

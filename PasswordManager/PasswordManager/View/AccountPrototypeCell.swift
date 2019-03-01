@@ -12,6 +12,7 @@ class AccountPrototypeCell: UITableViewCell {
 
     @IBOutlet weak var appNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
